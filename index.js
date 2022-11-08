@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
+const jwt = require("jasonwebtoken");
 const app = express();
 
 app.use(express.json());
@@ -17,6 +17,12 @@ const courseSchema = new mongoose.Schema({
   isPubliced: Boolean,
 });
 const Course = mongoose.model("Course", courseSchema);
+
+app.post("/login", (req, res) => {
+  const userName = req.body.userName;
+  const name = { name: userName };
+  jwt;
+});
 
 // async function getCourse() {
 //   const courses = await Course.find({ isPubliced: true })
